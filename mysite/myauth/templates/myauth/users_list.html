@@ -1,0 +1,27 @@
+{% extends 'myauth/base.html' %}
+
+{% block title %}
+    Users list
+{% endblock %}
+
+{% block body %}
+    <h1>Users:</h1>
+    {% if users %}
+        <div>
+            {% for user_object in users %}
+                <p><a href="{% url 'myauth:user_details' pk=user_object.pk %}">
+                    Username: {{ user_object.username }}</a></p>
+                <p>First name: {% firstof user_object.first_name 'none' %}</p>
+                <p>Email: {% firstof user_object.email 'none' %}</p>
+            {% endfor %}
+        </div>
+    {% else %}
+        <h3>No users yet</h3>
+    {% endif %}
+
+    <div>
+        <br>
+        <p><a href="{% url 'myauth:register' %}">Register on the site</a></p>
+        <p><a href="{% url 'myauth:logout' %}">Log out</a></p>
+    </div>
+{% endblock %}

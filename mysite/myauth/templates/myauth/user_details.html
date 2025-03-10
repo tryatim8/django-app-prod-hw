@@ -1,0 +1,45 @@
+{% extends 'myauth/base.html' %}
+
+{% block title %}
+    User details
+{% endblock %}
+
+{% block body %}
+    <h1>User #{{ profile.user.pk }} details:</h1>
+    {% if user.is_authenticated %}
+        <p>Username: {{ profile.user.username }}</p>
+        <p>First name: {{ profile.user.first_name }}</p>
+        <p>Last name: {{ profile.user.last_name }}</p>
+        <p>Email: {{ profile.user.email }}</p>
+        <p>Bio: {{ profile.bio }}</p>
+        <p>
+            Agreement accepted:
+            <b>{{ profile.agreement_accepted|yesno:"Yes,No" }}</b>
+        </p>
+
+        {% if profile.avatar %}
+            <p>Avatar:</p>
+            <img src="{{ profile.avatar.url }}"
+                 alt="{{ profile.avatar.name }}"><br>
+        {% else %}
+            <p>Avatar: No avatar image yet</p>
+        {% endif %}
+
+        {% if user.is_staff or profile.user.pk == user.pk %}
+            <form enctype="multipart/form-data" method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <input type="submit" value="Update avatar">
+            </form>
+        {% endif %}
+
+    {% else %}
+        <h2>User is anonymous</h2>
+    {% endif %}
+
+    <div>
+        <br>
+        <p><a href="{% url 'myauth:users' %}">Back to users list</a></p>
+        <p><a href="{% url 'myauth:logout' %}">Log out</a></p>
+    </div>
+{% endblock %}

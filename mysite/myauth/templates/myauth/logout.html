@@ -1,0 +1,15 @@
+{% extends 'myauth/base.html' %}
+
+{% block title %}
+  Logout
+{% endblock %}
+
+{% block body %}
+  <h2>Press button if you want to log out</h2>
+  <form method="post">
+    {% csrf_token %}
+    <input type="submit" value="Confirm logout">
+  </form>
+  <br>
+  <a href="{% url 'myauth:about-me' %}"><button>Cancel</button></a>
+{% endblock %}

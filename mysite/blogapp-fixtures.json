@@ -1,0 +1,116 @@
+[
+  {
+    "model": "blogapp.author",
+    "pk": 1,
+    "fields": {
+      "name": "William",
+      "bio": "William Shakespeare was an English playwright, poet and actor. He is widely regarded as the greatest writer in the English language"
+    }
+  },
+  {
+    "model": "blogapp.author",
+    "pk": 2,
+    "fields": {
+      "name": "Elchin Mammadov",
+      "bio": "Forester and ecologist dedicated to forest conservation. Since 2017, he has led the Shirvan forestry, focusing on sustainable forest management and public education."
+    }
+  },
+  {
+    "model": "blogapp.category",
+    "pk": 1,
+    "fields": {
+      "name": "Romantic"
+    }
+  },
+  {
+    "model": "blogapp.category",
+    "pk": 2,
+    "fields": {
+      "name": "Literature"
+    }
+  },
+  {
+    "model": "blogapp.category",
+    "pk": 3,
+    "fields": {
+      "name": "Environmental Science"
+    }
+  },
+  {
+    "model": "blogapp.tag",
+    "pk": 1,
+    "fields": {
+      "name": "English"
+    }
+  },
+  {
+    "model": "blogapp.tag",
+    "pk": 2,
+    "fields": {
+      "name": "Literature"
+    }
+  },
+  {
+    "model": "blogapp.tag",
+    "pk": 3,
+    "fields": {
+      "name": "Classic"
+    }
+  },
+  {
+    "model": "blogapp.tag",
+    "pk": 4,
+    "fields": {
+      "name": "Wikipedia"
+    }
+  },
+  {
+    "model": "blogapp.tag",
+    "pk": 5,
+    "fields": {
+      "name": "Scince"
+    }
+  },
+  {
+    "model": "blogapp.tag",
+    "pk": 6,
+    "fields": {
+      "name": "Forestry"
+    }
+  },
+  {
+    "model": "blogapp.article",
+    "pk": 1,
+    "fields": {
+      "title": "About articles",
+      "content": "A news article discusses current or recent news of either general interest (i.e. daily newspapers) or of a specific topic (i.e. political or trade news magazines, club newsletters or technology news websites).",
+      "pub_date": "2025-02-18T14:42:22.161Z",
+      "updated_at": "2025-02-18T14:49:00.624Z",
+      "author": 1,
+      "category": 2,
+      "tags": [
+        1,
+        2,
+        3
+      ]
+    }
+  },
+  {
+    "model": "blogapp.article",
+    "pk": 2,
+    "fields": {
+      "title": "Forest Ecology of Azerbaijan: Current Status and Conservation Efforts",
+      "content": "The forests of Azerbaijan cover 1,213.7 thousand hectares, accounting for 11.8% of the country's total area (86.6 million hectares). The main forest areas are concentrated in the regions of the Greater and Lesser Caucasus, as well as in the Talysh zone. These forests play a crucial role in maintaining the ecosystem by ensuring the stability of water, air, and soil.",
+      "pub_date": "2025-02-18T14:49:31.060Z",
+      "updated_at": "2025-02-18T14:49:31.060Z",
+      "author": 2,
+      "category": 3,
+      "tags": [
+        2,
+        4,
+        5,
+        6
+      ]
+    }
+  }
+]
