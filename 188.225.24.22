@@ -1,0 +1,11 @@
+Host user-server
+	HostName 188.225.24.22
+	User user
+	Port 2022
+	IdentityFile ~/.ssh/timeweb
+
+Host root-server
+	HostName 188.225.24.22
+	User root
+	Port 2022
+	IdentityFile ~/.ssh/timeweb
